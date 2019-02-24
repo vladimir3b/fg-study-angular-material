@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-label>Enter your message</mat-label>
+  <textarea
+    matInput
+    #messageBox
+    cdkTextareaAutosize></textarea>
+  <mat-hint align="end">You've entered {{ messageBox?.value.length }} characters</mat-hint>
+</mat-form-field>
+

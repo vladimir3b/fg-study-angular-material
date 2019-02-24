@@ -11,6 +11,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ComboBoxComponent } from './components/combo-box/combo-box.component';
 import { MessageComponent } from './components/message/message.component';
 import { AutocompleteTextInputComponent } from './components/autocomplete-text-input/autocomplete-text-input.component';
+import { TextBoxComponent } from './components/text-box/text-box.component';
+import { PersonalizedInputComponent } from './components/personalized-input/personalized-input.component';
+import { RestrictInputDirective } from './directives/restrict-input.directive';
 
 @NgModule({
   imports: [ 
@@ -26,7 +29,10 @@ import { AutocompleteTextInputComponent } from './components/autocomplete-text-i
     HomeComponent,
     MessageComponent,
     ComboBoxComponent,
-    AutocompleteTextInputComponent
+    AutocompleteTextInputComponent,
+    TextBoxComponent,
+    PersonalizedInputComponent,
+    RestrictInputDirective
   ],
   bootstrap: [ RootComponent ]
 })
