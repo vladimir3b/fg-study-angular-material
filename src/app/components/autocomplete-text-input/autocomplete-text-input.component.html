@@ -1,0 +1,18 @@
+
+  <mat-form-field>
+    <input 
+        type="text" 
+        placeholder="Choose the food you like most..." 
+        matInput
+        [formControl]="foodControl" 
+        [matAutocomplete]="auto">
+    <mat-autocomplete 
+          autoActiveFirstOption 
+          #auto="matAutocomplete">
+      <mat-option 
+          *ngFor="let food of filteredFood | async" 
+          [value]="food._id">
+        {{ food.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>

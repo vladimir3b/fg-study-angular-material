@@ -1,0 +1,37 @@
+<mat-form-field>
+  <mat-select 
+      placeholder="Your favorite food" 
+      [formControl]="foodControl" 
+      required>
+    <mat-option>--</mat-option>
+    <mat-option 
+        *ngFor="let food of listOfFoods" 
+        [value]="food._id">
+      {{ food.name }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="foodControl.hasError('required')">
+    Please choose your favorite food
+  </mat-error>
+  <mat-hint>
+    {{ selectedFood()?.description }}
+  </mat-hint>
+</mat-form-field>
+
+<fg-message
+    [message]="{title: 'You\'ve choose to eat'}"
+    *ngIf="selectedFood()">
+
+<mat-list role="list">
+  <mat-list-item role="listitem">
+    <strong>Food name:</strong>&nbsp;{{ selectedFood().name }}
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    <strong>Food price:</strong>&nbsp;{{ selectedFood().price }}
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    <strong>Food description:</strong>&nbsp;{{ selectedFood().description }}
+  </mat-list-item>
+</mat-list>
+
+</fg-message>
