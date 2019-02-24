@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { 
+import {
   MatListModule,
   MatIconModule,
   MatSelectModule,
   MatCardModule,
   MatAutocompleteModule,
-  MatInputModule
+  MatInputModule,
+  MatToolbarModule
 } from '@angular/material'
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const ANGULAR_MATERIAL = [
   MatListModule,
@@ -15,7 +16,9 @@ const ANGULAR_MATERIAL = [
   MatSelectModule,
   MatCardModule,
   MatAutocompleteModule,
-  MatInputModule
+  MatInputModule,
+  MatToolbarModule,
+  FlexLayoutModule
 ]
 
 @NgModule({
