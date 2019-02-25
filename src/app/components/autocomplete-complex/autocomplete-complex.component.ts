@@ -1,3 +1,4 @@
+import { ITravelingModel } from './../../data/models/traveling.model';
 // https://alligator.io/angular/reactive-forms-custom-validator/
 
 import { ICountryModel } from './../../data/models/country.model';
@@ -41,16 +42,18 @@ const MY_FORMATS = {
 export class AutocompleteComplexComponent implements OnInit {
 
   // PROPERTIES
-  public showMessage: boolean;
+  public formSent: boolean;
   public travelingDetailsForm: FormGroup;
   public minimumDepartureDate: moment.Moment;
   public minimumReturnDate: moment.Moment;
   public countryNames: Array<string>;
+  public countryCities: Array<string>;
   public filteredCountryNames: Observable<Array<string>>;
+  public travelingDetails: ITravelingModel;
 
   // CONSTRUCTOR
   constructor() {
-    this.showMessage = false;
+    this.formSent = false;
   }
 
   // LIFE CYCLE HOOKS
@@ -91,11 +94,11 @@ export class AutocompleteComplexComponent implements OnInit {
       }
     });
 
-    this.travelingDetailsForm.get('country').valueChanges.subscribe((country: string) => {
+    this.travelingDetailsForm.get('country').valueChanges.subscribe((countryName: string) => {
       if (this.travelingDetailsForm.get('country').valid) {
         this.travelingDetailsForm.get('city').enable();
+        this.countryCities = [ ...COUNTRIES.find((country: ICountryModel) => country.name === countryName).cities ];
       } else {
-        // console.log((this.travelingDetailsForm.get('country').errors));
         this.travelingDetailsForm.get('city').disable();
       }
     })
@@ -103,12 +106,23 @@ export class AutocompleteComplexComponent implements OnInit {
 
   // METHODS
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+    const filterValue = value ? value.toLowerCase() : '';
     return this.countryNames.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
-  public onSubmit(): void {
+  public reset(): void {
+    this.travelingDetailsForm.reset();
+  }
 
+  public onSubmit(): void {
+    this.travelingDetails = {
+      country: this.travelingDetailsForm.get('country').value,
+      city: this.travelingDetailsForm.get('city').value,
+      departureDate: this.travelingDetailsForm.get('departureDate').value,
+      returnDate: this.travelingDetailsForm.get('returnDate').value
+    };
+    this.formSent = true;
+    this.reset();
   }
 
 }
