@@ -9,9 +9,20 @@
     <input
         matInput
         type="text"
+        [matAutocomplete]="autoCountry"
         formControlName="country"
         placeholder="Select a country...">
-    <mat-error>
+    <mat-autocomplete #autoCountry="matAutocomplete">
+      <mat-option
+          *ngFor="let countryName of filteredCountryNames | async"
+          [value]="countryName">
+        {{ countryName }}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-error *ngIf="travelingDetailsForm.get('country').errors?.invalidCountryName">
+      There is no such country!!!
+    </mat-error>
+    <mat-error *ngIf="travelingDetailsForm.get('country').errors?.required">
       You have to choose a country.
     </mat-error>
     <mat-hint>

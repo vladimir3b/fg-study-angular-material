@@ -1,5 +1,5 @@
 import { ICountryModel } from './models/country.model';
-export const countries: Array<ICountryModel> = [
+export const COUNTRIES: Array<ICountryModel> = [
     {
         'name': 'Afghanistan',
         'dialCode': '+93',
@@ -75300,3 +75300,5 @@ export const countries: Array<ICountryModel> = [
         ]
     }
 ];
+
+export const COUNTRY_NAMES = COUNTRIES.map((country: ICountryModel) => country.name);
