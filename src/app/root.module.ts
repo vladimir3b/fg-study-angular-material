@@ -14,6 +14,7 @@ import { AutocompleteTextInputComponent } from './components/autocomplete-text-i
 import { TextBoxComponent } from './components/text-box/text-box.component';
 import { PersonalizedInputComponent } from './components/personalized-input/personalized-input.component';
 import { RestrictInputDirective } from './directives/restrict-input.directive';
+import { AutocompleteComplexComponent } from './components/autocomplete-complex/autocomplete-complex.component';
 
 @NgModule({
   imports: [ 
@@ -32,7 +33,8 @@ import { RestrictInputDirective } from './directives/restrict-input.directive';
     AutocompleteTextInputComponent,
     TextBoxComponent,
     PersonalizedInputComponent,
-    RestrictInputDirective
+    RestrictInputDirective,
+    AutocompleteComplexComponent
   ],
   bootstrap: [ RootComponent ]
 })

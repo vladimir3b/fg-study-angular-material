@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "fg-study-angular-material": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -101,5 +101,5 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "fg-study-angular-material"
 }

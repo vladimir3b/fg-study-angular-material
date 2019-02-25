@@ -1,0 +1,97 @@
+<form
+    [formGroup]="travelingDetailsForm"
+    (ngSubmit)="onSubmit()"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="1rem">
+  <!-- Country input -->
+  <mat-form-field>
+    <input
+        matInput
+        type="text"
+        formControlName="country"
+        placeholder="Select a country...">
+    <mat-error>
+      You have to choose a country.
+    </mat-error>
+    <mat-hint>
+      Choose the country you would like to visit.
+    </mat-hint>
+  </mat-form-field>
+
+  <!-- City input -->
+  <mat-form-field>
+    <input
+        matInput
+        type="text"
+        formControlName="city"
+        placeholder="Select a town/city...">
+    <mat-error>
+      You have to choose a city.
+    </mat-error>
+    <mat-hint>
+      Choose a city/town of the selected country.
+    </mat-hint>
+  </mat-form-field>
+
+  <!-- Departure date input -->
+  <mat-form-field>
+    <input
+        matInput
+        placeholder="Departure date..."
+        formControlName="departureDate"
+        [min]="minimumDepartureDate"
+        [matDatepicker]="departureDatePicker">
+    <mat-datepicker-toggle
+        matSuffix
+        [for]="departureDatePicker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #departureDatePicker></mat-datepicker>
+    <mat-error *ngIf="travelingDetailsForm.get('departureDate').errors?.required">
+      The departure date is <strong>required</strong>!
+    </mat-error>
+    <mat-error *ngIf="travelingDetailsForm.get('departureDate').errors?.matDatepickerMin">
+      The departure date must be <strong>at least tomorrow</strong>!
+    </mat-error>
+    <mat-error>
+      You must introduce a valid date.
+    </mat-error>
+    <mat-hint>
+      The earlier date you can choose is tomorrow.
+    </mat-hint>
+  </mat-form-field>
+
+  <!-- Departure date input -->
+  <mat-form-field>
+    <input
+        matInput
+        placeholder="Return date..."
+        formControlName="returnDate"
+        [min]="minimumReturnDate"
+        [matDatepicker]="returnDatePicker">
+    <mat-datepicker-toggle
+        matSuffix
+        [for]="returnDatePicker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #returnDatePicker></mat-datepicker>
+    <mat-error *ngIf="travelingDetailsForm.get('returnDate').errors?.matDatepickerMin">
+      The return date must be <strong>at least 3 days after the departure date</strong>!
+    </mat-error>
+    <mat-error *ngIf="!travelingDetailsForm.get('returnDate').errors?.matDatepickerMin">
+      You must introduce a valid date.
+    </mat-error>
+    <mat-hint>
+      This field is not mandatory.
+    </mat-hint>
+  </mat-form-field>
+
+  <!-- submit button -->
+  <button
+      [disabled]="!travelingDetailsForm.valid"
+      type="submit"
+      color="primary"
+      mat-raised-button>
+    Submit
+  </button>
+</form>
+

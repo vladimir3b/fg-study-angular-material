@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ComboBoxComponent } from './components/combo-box/combo-box.component';
 import { AutocompleteTextInputComponent } from './components/autocomplete-text-input/autocomplete-text-input.component';
 import { PersonalizedInputComponent } from './components/personalized-input/personalized-input.component';
+import { AutocompleteComplexComponent } from './components/autocomplete-complex/autocomplete-complex.component';
 
 const ROUTES: Routes = [
   {
@@ -29,6 +30,10 @@ const ROUTES: Routes = [
   {
     path: 'personalized-input',
     component: PersonalizedInputComponent
+  },
+  {
+    path: 'autocomplete-complex',
+    component: AutocompleteComplexComponent
   }
 ];
 

@@ -6,8 +6,11 @@ import {
   MatCardModule,
   MatAutocompleteModule,
   MatInputModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatButtonModule,
+  MatDatepickerModule,
 } from '@angular/material'
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 const ANGULAR_MATERIAL = [
@@ -18,7 +21,10 @@ const ANGULAR_MATERIAL = [
   MatAutocompleteModule,
   MatInputModule,
   MatToolbarModule,
-  FlexLayoutModule
+  FlexLayoutModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatMomentDateModule
 ]
 
 @NgModule({
