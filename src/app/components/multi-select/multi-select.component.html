@@ -1,0 +1,31 @@
+<mat-form-field>
+  <mat-select
+        placeholder="What countries would you like to visit..."
+        [formControl]="selectCountryForm"
+        multiple>
+    <mat-select-trigger>
+      {{ selectCountryForm.value ? selectCountryForm.value[0] : '' }}
+      <span
+          *ngIf="selectCountryForm.value?.length > 1"
+          class="example-additional-selection">
+        (+{{selectCountryForm.value.length - 1}} {{selectCountryForm.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+    </mat-select-trigger>
+    <mat-option
+          *ngFor="let country of countriesList"
+          [value]="country">
+        {{ country }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<fg-message *ngIf="selectCountryForm.value?.length" >
+  <strong>You would like to visit:</strong>
+  <mat-list role="list">
+    <mat-list-item
+        *ngFor="let country of selectCountryForm.value"
+        role="listitem">
+      {{ country }}
+    </mat-list-item>
+  </mat-list>
+</fg-message>
