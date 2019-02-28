@@ -10,6 +10,8 @@ import { AutocompleteTextInputComponent } from './components/autocomplete-text-i
 import { PersonalizedInputComponent } from './components/personalized-input/personalized-input.component';
 import { AutocompleteComplexComponent } from './components/autocomplete-complex/autocomplete-complex.component';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import { TimeAndDateComponent } from './components/time-and-date/time-and-date.component';
+import { RealWorldExampleComponent } from './components/real-world-example/real-world-example.component';
 
 const ROUTES: Routes = [
   {
@@ -39,6 +41,14 @@ const ROUTES: Routes = [
   {
     path: 'multi-select',
     component: MultiSelectComponent
+  },
+  {
+    path: 'time-and-date',
+    component: TimeAndDateComponent
+  },
+  {
+    path: 'real-world-example',
+    component: RealWorldExampleComponent
   }
 ];
 
@@ -48,6 +58,7 @@ const ROUTES: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  declarations: [RealWorldExampleComponent]
 })
 export class RoutingModule { }

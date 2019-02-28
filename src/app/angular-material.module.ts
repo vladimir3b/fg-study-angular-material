@@ -9,8 +9,8 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatDatepickerModule,
-} from '@angular/material'
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
+} from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 const ANGULAR_MATERIAL = [
@@ -25,7 +25,7 @@ const ANGULAR_MATERIAL = [
   MatButtonModule,
   MatDatepickerModule,
   MatMomentDateModule
-]
+];
 
 @NgModule({
   imports: [

@@ -63,7 +63,7 @@ export class AutocompleteComplexComponent implements OnInit {
 
 
     // Creating virtual form
-    this.minimumDepartureDate = moment(new Date()).add(1,'days');
+    this.minimumDepartureDate = moment(new Date()).add(1, 'days');
     this.travelingDetailsForm = new FormGroup({
       country: new FormControl(null, [
         Validators.required,
@@ -101,7 +101,7 @@ export class AutocompleteComplexComponent implements OnInit {
       } else {
         this.travelingDetailsForm.get('city').disable();
       }
-    })
+    });
   }
 
   // METHODS

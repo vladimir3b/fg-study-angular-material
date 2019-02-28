@@ -16,6 +16,7 @@ import { PersonalizedInputComponent } from './components/personalized-input/pers
 import { RestrictInputDirective } from './directives/restrict-input.directive';
 import { AutocompleteComplexComponent } from './components/autocomplete-complex/autocomplete-complex.component';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import { TimeAndDateComponent } from './components/time-and-date/time-and-date.component';
 
 @NgModule({
   imports: [ 
@@ -36,7 +37,8 @@ import { MultiSelectComponent } from './components/multi-select/multi-select.com
     PersonalizedInputComponent,
     RestrictInputDirective,
     AutocompleteComplexComponent,
-    MultiSelectComponent
+    MultiSelectComponent,
+    TimeAndDateComponent
   ],
   bootstrap: [ RootComponent ]
 })
