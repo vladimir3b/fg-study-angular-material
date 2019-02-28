@@ -24,7 +24,7 @@ const ANGULAR_MATERIAL = [
   FlexLayoutModule,
   MatButtonModule,
   MatDatepickerModule,
-  MatMomentDateModule
+  MatMomentDateModule,
 ];
 
 @NgModule({

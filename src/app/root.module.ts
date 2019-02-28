@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { KendoUiModule } from './kendo-ui.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { RoutingModule } from './routing.module';
 import { RootComponent } from './components/root/root.component';
@@ -18,16 +19,18 @@ import { AutocompleteComplexComponent } from './components/autocomplete-complex/
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { TimeAndDateComponent } from './components/time-and-date/time-and-date.component';
 
+
 @NgModule({
-  imports: [ 
-    BrowserModule, 
+  imports: [
+    BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     RoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KendoUiModule
   ],
-  declarations: [ 
+  declarations: [
     RootComponent,
     HomeComponent,
     MessageComponent,

@@ -1,8 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@progress/kendo-theme-material";
 
 html, body {
   padding: 0;
   margin: 0;
+  font-family: Roboto, sans-serif;
 }
 
 a {
@@ -13,7 +15,7 @@ a {
   text-decoration: none;
 }
 
-mat-form-field {
+mat-form-field, kendo-textbox-container, kendo-timepicker {
   width: 25rem;
   margin: 2rem;
 }

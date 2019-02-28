@@ -57,7 +57,7 @@ export class AutocompleteComplexComponent implements OnInit {
   }
 
   // LIFE CYCLE HOOKS
-  ngOnInit() {
+  public ngOnInit(): void {
     // Loading countries name
     this.countryNames = [ ...COUNTRY_NAMES ];
 
